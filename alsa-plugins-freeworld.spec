@@ -1,19 +1,20 @@
 Name:           alsa-plugins-freeworld
-Version:        1.2.2
+Version:        1.2.6
 Release:        7%{dist}
 Summary:        Extra Plug-Ins for ALSA Library
 License:        LGPLv2+
 Group:          System Environment/Libraries
 Url:            http://www.alsa-project.org/
-Source:         ftp://ftp.alsa-project.org/pub/plugins/alsa-plugins-%{version}.tar.bz2
+Source:         https://www.alsa-project.org/files/pub/plugins/alsa-plugins-%{version}.tar.bz2
 
 #--------------------------------------------
 BuildRequires:  libtool
 BuildRequires:  autoconf 
 BuildRequires:  automake
+BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(alsa) >= 1.2.2
 BuildRequires:  pkgconfig(avtp)
-BuildRequires:	ffmpeg-devel >= 4.2.3
+BuildRequires:	ffmpeg-devel >= 5.0
 
 
 %description
@@ -104,6 +105,9 @@ find %{buildroot} -type f -name "*.la" -delete -print
 
 
 %changelog
+
+* Fri Feb 11 2022 David Va <davidva AT tuta DOT io> 1.2.6-7 
+- Updated to 1.2.6
 
 * Fri May 29 2020 David Va <davidva AT tuta DOT io> 1.2.2-7 
 - Initial build
